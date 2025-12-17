@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script>
-function drag(e) {
-  e.dataTransfer.setData("img", e.target.id);
-}
+  <head>
+    <style>
+      #getData{
+        width:250px;
+        height:250px;
+        padding:10px;
+        border:1px solid black;
+      }
+    </style>
 
-function allowDrop(e) {
-  e.preventDefault();
-}
+    <script>
+       function allowDrop(even){
+           even.preventDefault();
+       }
 
-function drop(e) {
-  e.preventDefault();
-  e.target.appendChild(
-    document.getElementById(e.dataTransfer.getData("img"))
-  );
-}
-</script>
-</head>
+       function drag(even){
+          even.dataTransfer.setData("text",even.target.id);
+       }
 
-<body>
+       function drop(even){
+          even.preventDefault();
+          var fetchData = even.dataTransfer.getData("text");
+          even.target.appendChild(document.getElementById(fetchData));
+       }
+    </script>
+  </head>
 
-<div id="box"
-     ondrop="drop(event)"
-     ondragover="allowDrop(event)"
-     style="width:250px;height:200px;border:1px solid black;">
-</div>
 
-<img id="img"
-     src="demo.jpg"
-     draggable="true"
-     ondragstart="drag(event)"
-     width="250"
-     height="200">
+  <body>
+    <h1>vit ap ra luccha </h1>
+    <div id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-</body>
+    </div>
+
+    <img id="dragData" src="demo.jpg" draggable="true" ondragstart="drag(event)" width="200px" height="200px">
+  </body>
 </html>
