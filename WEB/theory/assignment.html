@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Technology Assignment</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      /* Center multi-line headings */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-align: center;
+      }
+
+      form {
+        width: 400px;
+        background-color: black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      fieldset {
+        border: 1px solid white;
+        padding: 10px;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box; /* FIX */
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .gender-group {
+        margin-top: 10px;
+      }
+
+      .gender-group label {
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      input[type="submit"] {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+      1)HTML is a markup language that provides the structural foundation of a
+      webpage
+    </h1>
+    <h1>HTML tags serve as the fundamental building blocks of web documents</h1>
+    <h4>
+      Nearly 90% of HTML tags require a corresponding closing tag written in the
+      format &lt;/tag&gt;
+    </h4>
+
+    <h1>THIS IS AN &lt;h1&gt; TAG — used to define primary headings</h1>
+    <h2>THIS IS AN &lt;h2&gt; TAG — commonly used for subheadings</h2>
+    <h3>THIS IS AN &lt;h3&gt; TAG — used for lower-level headings</h3>
+    <h4>THIS IS AN &lt;h4&gt; TAG</h4>
+    <h5>THIS IS AN &lt;h5&gt; TAG</h5>
+    <h6>THIS IS AN &lt;h6&gt; TAG — the smallest heading level</h6>
+
+    <p>
+      2)This is a &lt;p&gt; tag, which is used to display paragraph content on a
+      webpage.
+    </p>
+
+    <p>
+      The paragraph tag does not preserve formatting such as extra spaces or
+      line breaks.
+    </p>
+
+    <pre>
+3) To display content in a preformatted manner,
+the &lt;pre&gt; tag is used.
+    </pre>
+
+    <br />
+
+    <p>4) A line break is inserted here using the <b>&lt;br&gt;</b> tag.</p>
+
+    <p>5) <b>&lt;a&gt; </b> tag is used to create hyperlinks like below one</p>
+    <a href="http://www.google.com/">Click here to visit Google</a>
+
+    <br /><br />
+
+    <p>
+      6) &lt;img&gt; tag is used for displaing images alt attribute is used for
+      alternate of img
+    </p>
+    <img
+      src="data:image/jpeg;base64,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"
+      alt="i am iron man "
+    />
+
+    <br />
+    <br />
+
+    <p>7) &lt;video&gt; tag is used load a video with minimal controls</p>
+    <video width="400" controls>
+      <source
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <hr />
+    <h2>HTML5 Audio Demonstration</h2>
+
+    <audio controls>
+      <source
+        src="https://www.w3schools.com/html/horse.mp3"
+        type="audio/mpeg"
+      />
+      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <p>8) HTML forms</p>
+
+    <form>
+      <fieldset>
+        <legend>User Personal Information</legend>
+
+        <label for="name">Enter your full name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="pass" required />
+
+        <label for="confirmPassword">Confirm your password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPass"
+          required
+        />
+
+        <label>Enter your gender:</label>
+        <div class="gender-group">
+          <input type="radio" name="gender" value="male" required /> Male
+          <input type="radio" name="gender" value="female" /> Female
+          <input type="radio" name="gender" value="others" /> Others
+        </div>
+
+        <label for="dob">Enter your Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="address">Enter your Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <h2>9. Simple Table</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Kushwanth</td>
+        <td>CSE</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>bhuma</td>
+        <td>CSE</td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>bot gadu</td>
+        <td>CSE</td>
+      </tr>
+    </table>
+
+    <h2>10) HTML Events Demonstration</h2>
+
+    <h3>Click Events</h3>
+    <button onclick="clickEvent()">Click Me</button>
+    <button ondblclick="doubleClickEvent()">Double Click Me</button>
+
+    <h3>Mouse Events</h3>
+    <div
+      id="mouseBox"
+      onmouseover="mouseOverEvent(this)"
+      onmouseout="mouseOutEvent(this)"
+      onmousedown="mouseDownEvent()"
+      onmouseup="mouseUpEvent()"
+      style="
+        width: 200px;
+        height: 100px;
+        background-color: gray;
+        text-align: center;
+        line-height: 100px;
+        margin: 10px;
+      "
+    >
+      Hover Here
+    </div>
+    <p id="mouseStatus"></p>
+
+    <h3>Keyboard Events</h3>
+    <input
+      type="text"
+      placeholder="Type something"
+      onkeydown="keyDownEvent()"
+      onkeyup="keyUpEvent()"
+      onkeypress="keyPressEvent()"
+    />
+    <p id="keyStatus"></p>
+
+    <h3>Form Events</h3>
+    <form onsubmit="return submitEvent()" onreset="resetEvent()">
+      <label>Select Course:</label>
+      <select onchange="changeEvent()">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+
+    <p id="loadStatus"></p>
+
+    <h2>11) SVG (Scalable Vector Graphics) Demonstration</h2>
+
+    <h3>SVG Circle</h3>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <circle
+        cx="100"
+        cy="100"
+        r="50"
+        stroke="green"
+        stroke-width="4"
+        fill="yellow"
+      />
+    </svg>
+
+    <h3>SVG Rectangle</h3>
+    <svg width="200" height="120" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="20" width="160" height="80" fill="blue" />
+    </svg>
+
+    <h3>SVG Rectangle with Rounded Corners</h3>
+    <svg width="200" height="120" xmlns="http://www.w3.org/2000/svg">
+      <rect
+        x="20"
+        y="20"
+        width="160"
+        height="80"
+        rx="15"
+        ry="15"
+        style="fill: red; stroke: black; stroke-width: 4"
+      />
+    </svg>
+
+    <h3>SVG Ellipse</h3>
+    <svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+      <ellipse
+        cx="100"
+        cy="75"
+        rx="60"
+        ry="40"
+        style="fill: yellow; stroke: green; stroke-width: 4"
+      />
+    </svg>
+
+    <h3>SVG Line</h3>
+    <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="50" x2="180" y2="50" stroke="red" stroke-width="3" />
+    </svg>
+
+    <h3>SVG Polygon</h3>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <polygon
+        points="100,20 180,180 20,180"
+        style="fill: lightblue; stroke: black; stroke-width: 3"
+      />
+    </svg>
+
+    <hr />
+    <h1>12) HTML5 Canvas Demonstration</h1>
+
+    <!-- 1. Draw a Line -->
+    <h3>1. Draw a Line</h3>
+    <canvas
+      id="lineCanvas"
+      width="200"
+      height="100"
+      style="border: 3px solid gray"
+    ></canvas>
+    <script>
+      var lc = document.getElementById("lineCanvas");
+      var lctx = lc.getContext("2d");
+      lctx.moveTo(0, 0);
+      lctx.lineTo(200, 100);
+      lctx.strokeStyle = "red";
+      lctx.lineWidth = 4;
+      lctx.stroke();
+    </script>
+
+    <!-- 2. Draw a Circle -->
+    <h3>2. Draw a Circle</h3>
+    <canvas
+      id="circleCanvas"
+      width="200"
+      height="100"
+      style="border: 3px solid blue"
+    ></canvas>
+    <script>
+      var cc = document.getElementById("circleCanvas");
+      var cctx = cc.getContext("2d");
+      cctx.beginPath();
+      cctx.arc(100, 50, 40, 0, 2 * Math.PI);
+      cctx.stroke();
+    </script>
+
+    <!-- 3. Draw Text -->
+    <h3>3. Draw Text</h3>
+    <canvas
+      id="textCanvas"
+      width="250"
+      height="100"
+      style="border: 3px solid green"
+    ></canvas>
+    <script>
+      var tc = document.getElementById("textCanvas");
+      var tctx = tc.getContext("2d");
+      tctx.font = "30px Rockwell";
+      tctx.fillStyle = "orange";
+      tctx.fillText("FRIEND", 10, 50);
+    </script>
+
+    <!-- 4. Stroke Text -->
+    <h3>4. Stroke Text</h3>
+    <canvas
+      id="strokeTextCanvas"
+      width="250"
+      height="100"
+      style="border: 3px solid purple"
+    ></canvas>
+    <script>
+      var sc = document.getElementById("strokeTextCanvas");
+      var sctx = sc.getContext("2d");
+      sctx.font = "30px Arial";
+      sctx.strokeText("FRIENDS", 10, 50);
+    </script>
+
+    <!-- 5. Linear Gradient -->
+    <h3>5. Linear Gradient</h3>
+    <canvas
+      id="linearGradientCanvas"
+      width="250"
+      height="100"
+      style="border: 3px solid brown"
+    ></canvas>
+    <script>
+      var lg = document.getElementById("linearGradientCanvas");
+      var lgctx = lg.getContext("2d");
+
+      var lgrd = lgctx.createLinearGradient(0, 0, 250, 0);
+      lgrd.addColorStop(0, "blue");
+      lgrd.addColorStop(1, "yellow");
+
+      lgctx.fillStyle = lgrd;
+      lgctx.fillRect(10, 10, 230, 80);
+    </script>
+
+    <!-- 6. Circular Gradient -->
+    <h3>6. Circular Gradient</h3>
+    <canvas
+      id="radialGradientCanvas"
+      width="250"
+      height="100"
+      style="border: 3px solid orange"
+    ></canvas>
+    <script>
+      var rg = document.getElementById("radialGradientCanvas");
+      var rgctx = rg.getContext("2d");
+
+      var rgrd = rgctx.createRadialGradient(125, 50, 5, 125, 50, 80);
+      rgrd.addColorStop(0, "blue");
+      rgrd.addColorStop(1, "orange");
+
+      rgctx.fillStyle = rgrd;
+      rgctx.fillRect(10, 10, 230, 80);
+    </script>
+
+    <!-- 7. Draw Image -->
+    <h3>7. Draw Image</h3>
+    <canvas
+      id="imageCanvas"
+      width="250"
+      height="150"
+      style="border: 3px solid black"
+    ></canvas>
+
+    <hr />
+    <h1>13) HTML5 Geolocation Demonstration</h1>
+
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="geoOutput"></p>
+
+
+
+    <hr />
+<h1>14) HTML5 Drag and Drop Demonstration</h1>
+
+<p>Drag the image into the box</p>
+
+<div
+  id="dropBox"
+  ondrop="drop(event)"
+  ondragover="allowDrop(event)"
+  style="
+    width: 250px;
+    height: 200px;
+    border: 3px dashed white;
+    text-align: center;
+    line-height: 200px;
+    margin-bottom: 20px;
+  "
+>
+</div>
+
+<img
+  id="dragImg"
+  src="data:image/jpeg;base64,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"
+  draggable="true"
+  ondragstart="drag(event)"
+  width="150"
+/>
+
+
+<script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+
+    <script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showGeoError);
+    } else {
+      document.getElementById("geoOutput").innerHTML =
+        "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    document.getElementById("geoOutput").innerHTML =
+      "Latitude: " +
+      position.coords.latitude +
+      "<br>Longitude: " +
+      position.coords.longitude;
+  }
+
+  function showGeoError() {
+    document.getElementById("geoOutput").innerHTML =
+      "Location access denied by user.";
+  }
+</script>
+
+    <script>
+      var ic = document.getElementById("imageCanvas");
+      var ictx = ic.getContext("2d");
+
+      var img = new Image();
+      img.src = "https://via.placeholder.com/150";
+
+      img.onload = function () {
+        ictx.drawImage(img, 50, 20);
+      };
+    </script>
+
+    <script>
+      /* Click Events */
+      function clickEvent() {
+        alert("Button clicked");
+      }
+
+      function doubleClickEvent() {
+        alert("Button double clicked");
+      }
+
+      function mouseOverEvent(el) {
+        el.style.backgroundColor = "orange";
+        el.innerHTML = "Mouse Over";
+      }
+
+      function mouseOutEvent(el) {
+        el.style.backgroundColor = "gray";
+        el.innerHTML = "Hover Here";
+      }
+
+      function mouseDownEvent() {
+        document.getElementById("mouseStatus").innerText =
+          "Mouse button pressed";
+      }
+
+      function mouseUpEvent() {
+        document.getElementById("mouseStatus").innerText =
+          "Mouse button released";
+      }
+
+      function keyDownEvent() {
+        document.getElementById("keyStatus").innerText = "Key Down";
+      }
+
+      function keyUpEvent() {
+        document.getElementById("keyStatus").innerText = "Key Up";
+      }
+
+      function keyPressEvent() {
+        document.getElementById("keyStatus").innerText = "Key Pressed";
+      }
+
+      function changeEvent() {
+        alert("Dropdown value changed");
+      }
+
+      function submitEvent() {
+        alert("Form submitted");
+        return false;
+      }
+
+      function resetEvent() {
+        alert("Form reset");
+      }
+
+      window.onload = function () {
+        document.getElementById("loadStatus").innerText =
+          "Page loaded successfully (onload event)";
+      };
+    </script>
+  </body>
+</html>
