@@ -1,0 +1,42 @@
+/* Define the colors based on the image provided */
+.color-A { 
+    background-color: #f7943c; /* Bright Orange */
+} 
+.color-B { 
+    background-color: #924b22; /* Dark Brown */
+}
+.color-C { 
+    background-color: #f9d3b1; /* Light Peach */
+}
+
+/* Container setup */
+.pattern-container {
+    display: grid;
+    /* Create 5 columns, each taking an equal fraction of space */
+    grid-template-columns: repeat(5, 1fr);                                                          
+    /* Create 5 rows */
+    grid-template-rows: repeat(5, 1fr);
+    /* Set a fixed size for the entire pattern area */
+    width: 300px;
+    height: 300px;
+    /* Add a white gap between tiles for the "grid" effect */
+    gap: 2px; 
+    border: 1px solid #fff; /* Optional: border around the entire pattern */
+}
+
+/* Individual tile styling */
+.tile {
+    /* Ensures the tiles take up the space defined by the grid */
+    width: 100%;
+    height: 100%;
+}
+
+/* Basic body styling for centering and background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; 
+}
